@@ -7,9 +7,13 @@ Simple app that plays keystroke sounds on your computer like the terminals in Fa
 - Press cmd + shift + ctrl + f to toggle the key stroke sounds on / off.
 
 # My Terminal
-I'm currently using iterm2 with:
-Foreground color: #29E18C
-Background color: #0E2E20
-Text Font: Fixedsys 20
+You can check out a photo of my terminal
+[here](http://i.imgur.com/hzIx86R.png)
 
-![](http://imgur.com/hzIx86R)
+I'm currently using iterm2 with:
+
+Foreground color: #29E18C
+
+Background color: #0E2E20
+
+Text Font: Fixedsys 20
