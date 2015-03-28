@@ -5,3 +5,11 @@ Simple app that plays keystroke sounds on your computer like the terminals in Fa
 - Created for Mac OS X 10.10
 - In order to hear the sounds, you must export the binary from xcode and enable accessibility under preferences > security & privacy > privacy > Accessibility (add the exported app here)
 - Press cmd + shift + ctrl + f to toggle the key stroke sounds on / off.
+
+# My Terminal
+I'm currently using iterm2 with:
+Foreground color: #29E18C
+Background color: #0E2E20
+Text Font: Fixedsys 20
+
+![](http://imgur.com/hzIx86R)
