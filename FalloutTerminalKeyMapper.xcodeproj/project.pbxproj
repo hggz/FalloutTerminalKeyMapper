@@ -12,6 +12,13 @@
 		C3B5AA061AA24337006CEAF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA051AA24337006CEAF2 /* Images.xcassets */; };
 		C3B5AA091AA24337006CEAF2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA071AA24337006CEAF2 /* MainMenu.xib */; };
 		C3B5AA151AA24337006CEAF2 /* FalloutTerminalKeyMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B5AA141AA24337006CEAF2 /* FalloutTerminalKeyMapperTests.m */; };
+		C3B5AA221AA24370006CEAF2 /* k2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA1F1AA24370006CEAF2 /* k2.mp3 */; };
+		C3B5AA231AA24370006CEAF2 /* k3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA201AA24370006CEAF2 /* k3.mp3 */; };
+		C3B5AA241AA24370006CEAF2 /* k4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA211AA24370006CEAF2 /* k4.mp3 */; };
+		C3B5AA261AA24BAC006CEAF2 /* kenter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA251AA24BAC006CEAF2 /* kenter.mp3 */; };
+		C3B5AA291AA24F43006CEAF2 /* poweroff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA271AA24F43006CEAF2 /* poweroff.mp3 */; };
+		C3B5AA2A1AA24F43006CEAF2 /* poweron.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA281AA24F43006CEAF2 /* poweron.mp3 */; };
+		C3B5AA351AA25DB2006CEAF2 /* pipboy_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA341AA25DB2006CEAF2 /* pipboy_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,13 @@
 		C3B5AA0E1AA24337006CEAF2 /* FalloutTerminalKeyMapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FalloutTerminalKeyMapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B5AA131AA24337006CEAF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3B5AA141AA24337006CEAF2 /* FalloutTerminalKeyMapperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FalloutTerminalKeyMapperTests.m; sourceTree = "<group>"; };
+		C3B5AA1F1AA24370006CEAF2 /* k2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = k2.mp3; sourceTree = "<group>"; };
+		C3B5AA201AA24370006CEAF2 /* k3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = k3.mp3; sourceTree = "<group>"; };
+		C3B5AA211AA24370006CEAF2 /* k4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = k4.mp3; sourceTree = "<group>"; };
+		C3B5AA251AA24BAC006CEAF2 /* kenter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kenter.mp3; sourceTree = "<group>"; };
+		C3B5AA271AA24F43006CEAF2 /* poweroff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = poweroff.mp3; sourceTree = "<group>"; };
+		C3B5AA281AA24F43006CEAF2 /* poweron.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = poweron.mp3; sourceTree = "<group>"; };
+		C3B5AA341AA25DB2006CEAF2 /* pipboy_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pipboy_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,8 @@
 		C3B5A9FD1AA24337006CEAF2 /* FalloutTerminalKeyMapper */ = {
 			isa = PBXGroup;
 			children = (
+				C3B5AA2D1AA25965006CEAF2 /* Icons */,
+				C3B5AA1E1AA24363006CEAF2 /* Sounds */,
 				C3B5AA001AA24337006CEAF2 /* AppDelegate.h */,
 				C3B5AA011AA24337006CEAF2 /* AppDelegate.m */,
 				C3B5AA051AA24337006CEAF2 /* Images.xcassets */,
@@ -109,6 +125,27 @@
 				C3B5AA131AA24337006CEAF2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3B5AA1E1AA24363006CEAF2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C3B5AA271AA24F43006CEAF2 /* poweroff.mp3 */,
+				C3B5AA281AA24F43006CEAF2 /* poweron.mp3 */,
+				C3B5AA251AA24BAC006CEAF2 /* kenter.mp3 */,
+				C3B5AA1F1AA24370006CEAF2 /* k2.mp3 */,
+				C3B5AA201AA24370006CEAF2 /* k3.mp3 */,
+				C3B5AA211AA24370006CEAF2 /* k4.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		C3B5AA2D1AA25965006CEAF2 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				C3B5AA341AA25DB2006CEAF2 /* pipboy_icon.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +228,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B5AA241AA24370006CEAF2 /* k4.mp3 in Resources */,
+				C3B5AA351AA25DB2006CEAF2 /* pipboy_icon.png in Resources */,
+				C3B5AA261AA24BAC006CEAF2 /* kenter.mp3 in Resources */,
 				C3B5AA061AA24337006CEAF2 /* Images.xcassets in Resources */,
+				C3B5AA2A1AA24F43006CEAF2 /* poweron.mp3 in Resources */,
+				C3B5AA221AA24370006CEAF2 /* k2.mp3 in Resources */,
+				C3B5AA291AA24F43006CEAF2 /* poweroff.mp3 in Resources */,
+				C3B5AA231AA24370006CEAF2 /* k3.mp3 in Resources */,
 				C3B5AA091AA24337006CEAF2 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +442,7 @@
 				C3B5AA1A1AA24337006CEAF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3B5AA1B1AA24337006CEAF2 /* Build configuration list for PBXNativeTarget "FalloutTerminalKeyMapperTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +451,7 @@
 				C3B5AA1D1AA24337006CEAF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
