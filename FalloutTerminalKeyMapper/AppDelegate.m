@@ -19,7 +19,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     self.isMuted = NO;
-    self.supportedBundles = @[@"com.googlecode.iterm2", @"com.apple.Terminal"];
+    self.supportedBundles = @[@"com.googlecode.iterm2", @"com.apple.Terminal", @"io.cool-retro-term"];
     NSArray *soundFiles = @[@"k2", @"k3", @"k4"];
     
     [NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event){
