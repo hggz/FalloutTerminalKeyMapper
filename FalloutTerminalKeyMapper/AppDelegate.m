@@ -38,7 +38,7 @@
 		BOOL onlyPlayOnTerminal = [[[NSUserDefaults standardUserDefaults] objectForKey:@"terminalsOnly"] boolValue];
 		if (onlyPlayOnTerminal) { //Determine if terminal is active
 			for (NSRunningApplication *currApp in [[NSWorkspace sharedWorkspace] runningApplications]) {
-				if ([currApp isActive] && ([currApp.localizedName isEqualToString:@"cool-retro-term"] || [currApp.localizedName isEqualToString:@"Terminal"])) {
+				if ([currApp isActive] && [self.supportedBundles containsObject:currApp.bundleIdentifier]) {
 					
 					terminalIsActive = YES; break;
 				}
