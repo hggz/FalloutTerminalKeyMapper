@@ -18,6 +18,58 @@
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	self.isMuted = NO;
+	self.supportedBundles = @[@"com.googlecode.iterm2", @"com.apple.Terminal", @"io.cool-retro-term", @"com.secretgeometry.Cathode"];
+	NSArray *soundFiles = @[@"k2", @"k3", @"k4"];
+	
+	[NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event){
+		
+		BOOL terminalIsActive = NO;
+		
+		// Keyboard shortcuts
+		if (([event modifierFlags] & NSCommandKeyMask) && ([event modifierFlags] & NSShiftKeyMask) && (event.modifierFlags & NSControlKeyMask)) {
+			if (event.keyCode == kVK_ANSI_K) {		//Toggle Mute
+				[self toggleMute];
+			}else if (event.keyCode == kVK_ANSI_L){		//Toggle Terminals Only setting
+				[self togglePlayMode];
+			}
+		}
+		
+		BOOL onlyPlayOnTerminal = [[[NSUserDefaults standardUserDefaults] objectForKey:@"terminalsOnly"] boolValue];
+		if (onlyPlayOnTerminal) { //Determine if terminal is active
+			for (NSRunningApplication *currApp in [[NSWorkspace sharedWorkspace] runningApplications]) {
+				if ([currApp isActive] && [self.supportedBundles containsObject:currApp.bundleIdentifier]) {
+					
+					terminalIsActive = YES; break;
+				}
+			}
+		}
+		
+		if (!self.isMuted && (terminalIsActive || !onlyPlayOnTerminal)) {
+			uint32_t random_index = arc4random_uniform((uint32_t)soundFiles.count);
+			NSString *resoucePath = [[NSBundle mainBundle] pathForResource:event.keyCode != 36 ? soundFiles[random_index] : @"kenter" ofType:@"mp3"];
+			NSSound *sound = [[NSSound alloc] initWithContentsOfFile:resoucePath byReference:YES];
+			[sound play];
+		}
+		
+	}];
+	
+	[[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
+														   selector:@selector(terminalLaunched:)
+															   name:NSWorkspaceDidLaunchApplicationNotification
+															 object:nil];
+	
+	[[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
+														   selector:@selector(terminalTerminated:)
+															   name:NSWorkspaceDidTerminateApplicationNotification
+															 object:nil];
+	
+	self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:28];
+	[self.statusItem setMenu:self.statusMenu];
+	[self.statusItem setImage:[NSImage imageNamed:@"pipboy_icon"]];
+	[self.statusItem setHighlightMode:YES];
+	
+	[self setMenuItems];
     self.isMuted = NO;
     self.supportedBundles = @[@"com.googlecode.iterm2", @"com.apple.Terminal", @"io.cool-retro-term", @"com.secretgeometry.Cathode"];
     NSArray *soundFiles = @[@"k2", @"k3", @"k4"];
@@ -50,6 +102,44 @@
     [self.statusItem setMenu:self.statusMenu];
     [self.statusItem setImage:[NSImage imageNamed:@"pipboy_icon"]];
     [self.statusItem setHighlightMode:YES];
+}
+
+-(void)setMenuItems{
+	NSMenu *menu = [[NSMenu alloc] init];
+	
+	NSMenuItem *muteItem = [[NSMenuItem alloc]initWithTitle:@"" action:@selector(toggleMute) keyEquivalent:@"k"];
+	if (self.isMuted) {
+		[muteItem setTitle:@"Unmute SFX"];
+	}else{
+		[muteItem setTitle:@"Mute SFX"];
+	}
+	[muteItem setKeyEquivalentModifierMask: NSShiftKeyMask | NSCommandKeyMask | NSControlKeyMask];
+	[menu addItem:muteItem];
+	
+	BOOL onlyPlayOnTerminal = [[[NSUserDefaults standardUserDefaults] objectForKey:@"terminalsOnly"] boolValue];
+	NSMenuItem *playModeItem = [[NSMenuItem alloc]initWithTitle:@"" action:@selector(togglePlayMode) keyEquivalent:@"l"];
+	if (onlyPlayOnTerminal) {
+		[playModeItem setTitle:@"Play SFX always"];
+	}else{
+		[playModeItem setTitle:@"Play SFX in terminal only"];
+	}
+	[playModeItem setKeyEquivalentModifierMask: NSShiftKeyMask | NSCommandKeyMask | NSControlKeyMask];
+	[menu addItem:playModeItem];
+	
+	[menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
+	[menu addItemWithTitle:@"Quit Fallout Terminal SFX" action:@selector(terminate:) keyEquivalent:@""];
+	_statusItem.menu = menu;
+}
+
+-(void)toggleMute{
+	self.isMuted = !self.isMuted;
+	[self setMenuItems];
+}
+-(void)togglePlayMode{
+	BOOL onlyPlayOnTerminal = [[[NSUserDefaults standardUserDefaults] objectForKey:@"terminalsOnly"] boolValue];
+	[[NSUserDefaults standardUserDefaults] setObject:@(!onlyPlayOnTerminal)
+											  forKey:@"terminalsOnly"];
+	[self setMenuItems];
 }
 
 - (void)terminalLaunched:(NSNotification *)notification {
