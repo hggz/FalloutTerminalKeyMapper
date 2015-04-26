@@ -70,38 +70,6 @@
 	[self.statusItem setHighlightMode:YES];
 	
 	[self setMenuItems];
-    self.isMuted = NO;
-    self.supportedBundles = @[@"com.googlecode.iterm2", @"com.apple.Terminal", @"io.cool-retro-term", @"com.secretgeometry.Cathode"];
-    NSArray *soundFiles = @[@"k2", @"k3", @"k4"];
-    
-    [NSEvent addGlobalMonitorForEventsMatchingMask:(NSKeyDownMask) handler:^(NSEvent *event){
-        if (!self.isMuted) {
-            uint32_t random_index = arc4random_uniform((uint32_t)soundFiles.count);
-            NSString *resoucePath = [[NSBundle mainBundle] pathForResource:event.keyCode != 36 ? soundFiles[random_index] : @"kenter" ofType:@"mp3"];
-            NSSound *sound = [[NSSound alloc] initWithContentsOfFile:resoucePath byReference:YES];
-            [sound play];
-        }
-        
-        //Toggle Mute
-        if (([event modifierFlags] & NSCommandKeyMask) && ([event modifierFlags] & NSShiftKeyMask) && (event.modifierFlags & NSControlKeyMask) && event.keyCode == 3) {
-            self.isMuted = !self.isMuted;
-        }
-    }];
-    
-    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
-                                                           selector:@selector(terminalLaunched:)
-                                                               name:NSWorkspaceDidLaunchApplicationNotification
-                                                             object:nil];
-    
-    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
-                                                           selector:@selector(terminalTerminated:)
-                                                               name:NSWorkspaceDidTerminateApplicationNotification
-                                                             object:nil];
-    
-    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    [self.statusItem setMenu:self.statusMenu];
-    [self.statusItem setImage:[NSImage imageNamed:@"pipboy_icon"]];
-    [self.statusItem setHighlightMode:YES];
 }
 
 -(void)setMenuItems{
