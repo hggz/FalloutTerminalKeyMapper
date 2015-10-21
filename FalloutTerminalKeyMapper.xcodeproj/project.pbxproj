@@ -18,7 +18,6 @@
 		C3B5AA261AA24BAC006CEAF2 /* kenter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA251AA24BAC006CEAF2 /* kenter.mp3 */; };
 		C3B5AA291AA24F43006CEAF2 /* poweroff.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA271AA24F43006CEAF2 /* poweroff.mp3 */; };
 		C3B5AA2A1AA24F43006CEAF2 /* poweron.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA281AA24F43006CEAF2 /* poweron.mp3 */; };
-		C3B5AA351AA25DB2006CEAF2 /* pipboy_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA341AA25DB2006CEAF2 /* pipboy_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		C3B5AA251AA24BAC006CEAF2 /* kenter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kenter.mp3; sourceTree = "<group>"; };
 		C3B5AA271AA24F43006CEAF2 /* poweroff.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = poweroff.mp3; sourceTree = "<group>"; };
 		C3B5AA281AA24F43006CEAF2 /* poweron.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = poweron.mp3; sourceTree = "<group>"; };
-		C3B5AA341AA25DB2006CEAF2 /* pipboy_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pipboy_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +88,6 @@
 		C3B5A9FD1AA24337006CEAF2 /* FalloutTerminalKeyMapper */ = {
 			isa = PBXGroup;
 			children = (
-				C3B5AA2D1AA25965006CEAF2 /* Icons */,
 				C3B5AA1E1AA24363006CEAF2 /* Sounds */,
 				C3B5AA001AA24337006CEAF2 /* AppDelegate.h */,
 				C3B5AA011AA24337006CEAF2 /* AppDelegate.m */,
@@ -140,14 +137,6 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
-		C3B5AA2D1AA25965006CEAF2 /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				C3B5AA341AA25DB2006CEAF2 /* pipboy_icon.png */,
-			);
-			name = Icons;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -192,7 +181,7 @@
 		C3B5A9F31AA24337006CEAF2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = mdt;
 				TargetAttributes = {
 					C3B5A9FA1AA24337006CEAF2 = {
@@ -229,7 +218,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3B5AA241AA24370006CEAF2 /* k4.mp3 in Resources */,
-				C3B5AA351AA25DB2006CEAF2 /* pipboy_icon.png in Resources */,
 				C3B5AA261AA24BAC006CEAF2 /* kenter.mp3 in Resources */,
 				C3B5AA061AA24337006CEAF2 /* Images.xcassets in Resources */,
 				C3B5AA2A1AA24F43006CEAF2 /* poweron.mp3 in Resources */,
@@ -309,6 +297,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -372,6 +361,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FalloutTerminalKeyMapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hgonzalez94.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -383,6 +373,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FalloutTerminalKeyMapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hgonzalez94.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -402,6 +393,7 @@
 				);
 				INFOPLIST_FILE = FalloutTerminalKeyMapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mdt.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FalloutTerminalKeyMapper.app/Contents/MacOS/FalloutTerminalKeyMapper";
 			};
@@ -418,6 +410,7 @@
 				);
 				INFOPLIST_FILE = FalloutTerminalKeyMapperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mdt.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FalloutTerminalKeyMapper.app/Contents/MacOS/FalloutTerminalKeyMapper";
 			};

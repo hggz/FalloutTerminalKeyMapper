@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <ApplicationServices/ApplicationServices.h>
 
 @interface AppDelegate ()
 @property (strong, nonatomic) IBOutlet NSMenu *statusMenu;
@@ -66,10 +67,17 @@
 	
 	self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:28];
 	[self.statusItem setMenu:self.statusMenu];
-	[self.statusItem setImage:[NSImage imageNamed:@"pipboy_icon"]];
+    NSImage *icon = [NSImage imageNamed:@"pipboy_icon"];
+    icon.size = CGSizeMake(self.statusMenu.size.height, self.statusMenu.size.height);
+	[self.statusItem setImage:icon];
+    
 	[self.statusItem setHighlightMode:YES];
 	
 	[self setMenuItems];
+    
+    if (!AXIsProcessTrusted()) { // Listening for keyboard input requires this app to have accessibility permission.
+        [self requestAccessibilityPermission]; // Pops up a dialog asking user to grant the app accessibility status.
+    }
 }
 
 -(void)setMenuItems{
@@ -133,6 +141,20 @@
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
+}
+
+-(void)requestAccessibilityPermission{
+    // 10.9 and later
+    const void * keys[] = { kAXTrustedCheckOptionPrompt };
+    const void * values[] = { kCFBooleanTrue };
+    
+    CFDictionaryRef options = CFDictionaryCreate(kCFAllocatorDefault,
+                                                 keys,
+                                                 values,
+                                                 sizeof(keys) / sizeof(*keys),
+                                                 &kCFCopyStringDictionaryKeyCallBacks,
+                                                 &kCFTypeDictionaryValueCallBacks);
+    AXIsProcessTrustedWithOptions(options);
 }
 
 enum {
