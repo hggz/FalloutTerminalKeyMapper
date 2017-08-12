@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00A75A351F3EA86D00605461 /* k4-reverse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00A75A341F3EA86D00605461 /* k4-reverse.mp3 */; };
 		C3B5AA021AA24337006CEAF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B5AA011AA24337006CEAF2 /* AppDelegate.m */; };
 		C3B5AA041AA24337006CEAF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B5AA031AA24337006CEAF2 /* main.m */; };
 		C3B5AA061AA24337006CEAF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3B5AA051AA24337006CEAF2 /* Images.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00A75A341F3EA86D00605461 /* k4-reverse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "k4-reverse.mp3"; sourceTree = "<group>"; };
 		C3B5A9FB1AA24337006CEAF2 /* FalloutTerminalKeyMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FalloutTerminalKeyMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B5A9FF1AA24337006CEAF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3B5AA001AA24337006CEAF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				C3B5AA271AA24F43006CEAF2 /* poweroff.mp3 */,
 				C3B5AA281AA24F43006CEAF2 /* poweron.mp3 */,
 				C3B5AA251AA24BAC006CEAF2 /* kenter.mp3 */,
+				00A75A341F3EA86D00605461 /* k4-reverse.mp3 */,
 				C3B5AA1F1AA24370006CEAF2 /* k2.mp3 */,
 				C3B5AA201AA24370006CEAF2 /* k3.mp3 */,
 				C3B5AA211AA24370006CEAF2 /* k4.mp3 */,
@@ -181,7 +184,7 @@
 		C3B5A9F31AA24337006CEAF2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = mdt;
 				TargetAttributes = {
 					C3B5A9FA1AA24337006CEAF2 = {
@@ -222,6 +225,7 @@
 				C3B5AA061AA24337006CEAF2 /* Images.xcassets in Resources */,
 				C3B5AA2A1AA24F43006CEAF2 /* poweron.mp3 in Resources */,
 				C3B5AA221AA24370006CEAF2 /* k2.mp3 in Resources */,
+				00A75A351F3EA86D00605461 /* k4-reverse.mp3 in Resources */,
 				C3B5AA291AA24F43006CEAF2 /* poweroff.mp3 in Resources */,
 				C3B5AA231AA24370006CEAF2 /* k3.mp3 in Resources */,
 				C3B5AA091AA24337006CEAF2 /* MainMenu.xib in Resources */,
@@ -290,8 +294,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -300,6 +306,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -332,8 +339,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -342,6 +351,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
